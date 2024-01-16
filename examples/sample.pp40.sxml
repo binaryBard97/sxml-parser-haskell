@@ -1,0 +1,29 @@
+<document>
+  <section number="1">
+    <p color="red">
+      This paragraph is <b>red</b> .
+    </p>
+    <p size="20">
+      This paragraph is <b>big</b> .
+    </p>
+    <p font="Times" color="red"
+       size="20" align="center">
+      This paragraph is
+      <b>quite fancy</b> .
+    </p>
+    <ul>
+      <li>List 1</li> <li>List 2</li>
+      <li>
+        List 3
+        <ul>
+          <li>List a</li>
+          <li>List b</li>
+          <li>List c</li>
+        </ul>
+      </li>
+      <li>List 4</li>
+    </ul>
+    <br/>
+    <img src="logo.png" alt="logo"/>
+  </section>
+</document>

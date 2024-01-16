@@ -1,0 +1,62 @@
+cabal-version: 3.0
+
+name:         prog08
+version:      0.1.0.0
+description:  Programming Assignment 08
+author:       Matthew Fluet
+copyright:    2023 Matthew Fluet
+license:      BSD-3-Clause
+build-type:   Simple
+
+extra-source-files:
+  README.adoc
+
+common common-stanza
+  build-depends:
+      base,
+      QuickCheck,
+      tasty, tasty-hunit, tasty-quickcheck,
+      directory, process
+  default-language:
+      GHC2021
+  default-extensions:
+  ghc-options:
+      -Wall -Wcompat -Widentities
+      -Wmissing-export-lists -Wmissing-home-modules
+      -Wpartial-fields -Wredundant-constraints
+      -Wno-name-shadowing -Wno-unused-imports
+
+library
+  import:
+      common-stanza
+  exposed-modules:
+      Valid, Parser, PrettyPrinter, SXML
+  hs-source-dirs:
+      src
+
+common common-exe-stanza
+  import:
+      common-stanza
+  ghc-options:
+      -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      prog08
+
+executable sxmlreformat
+  import:
+      common-exe-stanza
+  main-is:
+      SXMLReformatExe.hs
+  hs-source-dirs:
+      app
+
+test-suite test-suite
+  import:
+      common-exe-stanza
+  type:
+      exitcode-stdio-1.0
+  main-is:
+      Spec.hs
+  other-modules:
+  hs-source-dirs:
+      test

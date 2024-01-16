@@ -1,0 +1,4 @@
+<root title="sample" author="mtf">
+  <img src="logo.png" alt="logo"/ >
+  Some <b>bold</b> text.
+</root>
